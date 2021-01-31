@@ -1,0 +1,51 @@
+import java.util.Arrays;
+public class PrimePlus {
+
+     public static void main(String[] args) {
+         Prime prime=new Prime();//生成对象
+		 int j=0,t;
+
+		 int[] p=new int[46];
+         for (int i=2;i<200;i++){
+			 if(prime.IsPrime(i))
+             {
+				 p[j]=i;
+				 j++;
+			 }
+			
+			
+		 }
+		System.out.println("200以内的素数:");
+		 for (int i=0;i<p.length ;i++ ){
+		     System.out.print(p[i]+"\t");
+			 if ((i+1)%10==0)
+				 System.out.println();
+		 }
+		  System.out.println("\n\n大于4的偶数可以写成两个素数之和");
+			t=0;
+		 for (int i=4;i<200 ;i+=2 )
+		 {
+			 	for (j=0;j<p.length&&i>p[j] ;j++ )
+					if (prime.IsPrime(i-p[j]))
+					{
+						//System.out.print(i+"="+p[j]+"+"+(i-p[j])+"     ");
+						System.out.printf("%-3d=%2d+%-3d\t",i,p[j],(i-p[j]));
+						t++;
+					break;
+					}
+					if (t%5==0)
+						System.out.println();
+
+
+		 }
+    }
+    boolean IsPrime(int p){
+        int i;
+        for(i=2;i<=Math.sqrt(p);i++)
+            if(p%i==0)
+            return false;
+            return true;
+    }
+    
+}
+//java.lang.Math.sqrt(p)

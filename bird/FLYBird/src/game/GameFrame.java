@@ -1,0 +1,56 @@
+
+
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+import javax.swing.JFrame;    //导入才可以继承
+
+/**
+ * 游戏窗体类
+ * @author Lenovo1
+ *
+ */
+
+
+
+
+
+public class GameFrame extends JFrame {        //继承JFrame类
+	
+	//构造器用来做初始化操作
+	
+	public GameFrame() {       //GameFrame窗体构造器，对窗体的构造
+		//设置窗体尺寸(宽度，高度)
+		setSize(600, 740);     //设置为背景图片的大小
+		//设置居中显示
+		setLocationRelativeTo(null);
+		//设置关闭窗体的同时终止程序
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//设置标题
+		setTitle("飞行小鸟");
+		//设置Logo图标img/0.ping
+		try {
+			setIconImage(ImageIO.read(this.getClass().getResource("../image/0.png")));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	public static void main(String[] args) {     //JAVA程序的主入口,一个程序只有一个入口
+		//创建一个窗体对象
+		GameFrame frame = new GameFrame();   //frame相当于一个盒子，把对象装到盒子里面
+		//创建一个画板对象
+		GamePanel panel = new GamePanel ();
+		//向窗体内添加一块画板
+		frame.add(panel);
+		//显示窗体`
+		frame.setVisible(true);//setVisbile显示方法
+
+		
+		
+	}
+
+			
+		}
+		
+	
+

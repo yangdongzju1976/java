@@ -1,0 +1,2 @@
+javadoc -private -d doc -author -version JavaDoc.java
+在CMD模式下，与JavaDoc.java目录下使用上述命令。

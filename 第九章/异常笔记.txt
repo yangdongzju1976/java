@@ -1,0 +1,13 @@
+1.异常是程序中的一些错误，但并不是所有的错误都是异常，并且错误有时候是可以避免的。
+ java.lang.Error	 java.lang.Exception
+ 异常处理机制能让程序在异常发生时，按照代码的预先设定的异常处理逻辑，针对性地处理异常，
+ 让程序尽最大可能恢复正常并继续执行，且保持代码的清晰.
+2.所有的异常类是从 java.lang.Exception 类继承的子类。
+3.Exception 类是 Throwable 类的子类。除了Exception类外，Throwable还有一个子类Error 。
+4.异常类有两个主要的子类：IOException 类和 RuntimeException 类。
+5.异常方法 public String getMessage()
+返回关于发生的异常的详细信息。这个消息在Throwable 类的构造函数中初始化了
+6.throw exceptionObject
+程序员也可以通过throw语句手动显式的抛出一个异常。throw语句的后面必须是一个异常对象。
+throw 语句必须写在函数中，执行throw 语句的地方就是一个异常抛出点，
+它和由JRE自动形成的异常抛出点没有任何差别。

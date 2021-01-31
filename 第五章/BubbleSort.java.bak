@@ -1,0 +1,45 @@
+import java.util.Random;
+public class BubbleSort
+{
+	public static void main(String[] args) 
+	{
+		Random r=new Random(11);//
+		int a[]=new int[30];
+		for (int i=0;i<a.length ;i++ )
+			a[i]=r.nextInt(100);
+		System.out.println("排序前：");
+		Output(a);
+		Bubble(a);
+		System.out.println("排序后：");
+		Output(a);
+		
+	}
+	static void Bubble(int a[]){
+		int t;
+		for (int i=0;i<a.length ;i++ )
+			for (int j=0;j<a.length-i-1 ;j++ )
+				if (a[j]>a[j+1])
+				{
+					t=a[j];
+					a[j]=a[j+1];  //交换a[j]与a[j+1],让大的数沉底，小的数冒上来。
+					a[j+1]=t;
+				}
+	}
+
+	static void Output(int a[]){
+		int t=1;
+		for (int i=0;i<a.length ;i++ ,t++)
+		{
+		
+			System.out.print(a[i]+"\t");//print :在同一行输出数组的一行。
+			if (t%10==0)
+			{
+				System.out.println();
+			}
+		}
+		System.out.println();
+
+	}
+	
+}
+//p87 冒泡排序

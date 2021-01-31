@@ -1,0 +1,18 @@
+import java.io.*;
+public class ErrorDemo
+{
+	
+	public static void main(String[] args) throws FileNotFoundException {
+		try
+		{
+			long[] arr = new long[1024*1024*100*4];//ÄÚ´æ²»×ãµÄ´íÎó
+		}
+		catch (Exception e)
+		{
+			System.out.println("a"+e);
+		}
+        
+    }
+}
+
+

@@ -1,0 +1,22 @@
+public class Sum{
+
+    public static void main(String[] args){
+
+        int number = 3;  //初始值1，以后再+2递增上去
+
+        int sum = 1;
+		String s="1";
+        for ( ; number <100; number+=2 ){ 
+			s=s+"+"+number;
+			sum += number;
+			System.out.println(s+"="+sum);
+			 }
+
+        System.out.println("1+3+5+7+……+99= " +sum);
+
+    }
+
+}
+//计算1+3+5+......+99的和
+
+ 

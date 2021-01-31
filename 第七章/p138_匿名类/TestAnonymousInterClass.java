@@ -1,0 +1,29 @@
+ /*
+ 匿名类有两种实现方式：
+继承一个类，重写其方法。
+实现一个接口（可以是多个），实现其方法。
+
+ */
+ class Out {
+    void show() {
+        System.out.println("调用 Out 类的 show() 方法");
+    }
+}
+public class TestAnonymousInterClass {
+	private int a=10;
+    // 在这个方法中构造一个匿名内部类
+    private void show() {
+        Out  anonyInter = new Out() {
+            // 获取匿名内部类的实例
+			@Override
+            void show() {
+                System.out.println("调用匿名类中的 show() 方法"+a);
+            }
+        };
+        anonyInter.show();
+    }
+    public static void main(String[] args) {
+        TestAnonymousInterClass test = new TestAnonymousInterClass();
+        test.show();
+    }
+}

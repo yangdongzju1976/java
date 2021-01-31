@@ -1,0 +1,12 @@
+1.泛型就是把类型明确的工作推迟到创建对象或调用方法的时候才去明确的特殊的类型。
+2.参数化类型，把类型当作是参数一样传递，Object<数据类型>这里面只能是引用类型不能是基本类型。
+Object<Integer>  //true
+Object<int> //false
+
+3.泛型是什么
+首先告诉大家ArrayList就是泛型。那ArrayList能完成哪些想不到的功能呢？先看看下面这段代码：
+
+ArrayList<String> strList = new ArrayList<String>();  
+ArrayList<Integer> intList = new ArrayList<Integer>();  
+ArrayList<Double> doubleList = new ArrayList<Double>();  
+这里构造了三个List,分别盛装String、Integer和Double；这就是ArrayList的过人之处：即各种类型的变量都可以组装成对应的List，而不必针对每个类型分别实现一个构建ArrayList的类。

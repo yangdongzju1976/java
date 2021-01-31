@@ -1,0 +1,27 @@
+Collection 接口是 List、Set 和 Queue 接口的父接口，通常情况下不被直接使用。
+Collection 接口定义了一些通用的方法，通过这些方法可以实现对集合的基本操作。
+定义的方法既可用于操作 Set 集合，也可用于操作 List 和 Queue 集合。
+
+collection主要方法:
+	boolean add(Object o)添加对象到集合
+	boolean remove(Object o)删除指定的对象
+	int size()返回当前集合中元素的数量
+	boolean contains(Object o)查找集合中是否有指定的对象
+	boolean isEmpty()判断集合是否为空
+	Iterator iterator()返回一个迭代器
+	boolean containsAll(Collection c)查找集合中是否有集合c中的元素
+	boolean addAll(Collection c)将集合c中所有的元素添加给该集合
+	void clear()删除集合中所有元素
+	void removeAll(Collection c)从集合中删除c集合中也有的元素
+	void retainAll(Collection c)从集合中删除集合c中不包含的元素
+
+collection主要子接口对象：
+   ├List(抽象接口，可重复有序)
+	list主要方法：
+	void add(int index,Object element)在指定位置上添加一个对象
+	boolean addAll(int index,Collection c)将集合c的元素添加到指定的位置
+	Object get(int index)返回List中指定位置的元素
+	int indexOf(Object o)返回第一个出现元素o的位置.
+	Object remove(int index)删除指定位置的元素
+	Object set(int index,Object element)用元素element取代位置index上的元素,返回被取代的元素
+	void sort()

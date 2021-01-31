@@ -1,0 +1,19 @@
+public class MobileAccount{
+	private int accountId=0;
+	public MobileAccount createAccount(){
+		accountId++;
+		return this;
+	}
+	public int getAccountId(){
+		return accountId;
+	}
+	public void setAccount(int accountId){
+		this.accountId=accountId;
+	}
+	public static void main(String[] args){
+		MobileAccount account=new MobileAccount();
+		System.out.println("’ ∫≈ «£∫"+account.createAccount().createAccount().getAccountId());
+	}
+
+
+}

@@ -1,0 +1,25 @@
+import java.util.ArrayList;
+import java.util.List;
+public class StaticMethod <T> {
+	int i;
+	
+public static void main(String[] args) 
+	{
+        System.out.println(test("aaaaa"));  //aaaaa  基本用法
+        System.out.println(test(123));  //aaaaa  基本用法
+        
+      
+    }
+
+    
+    public static<T> T test(T obj){
+		//i++;
+        return obj;
+    }
+	public <T> T test1(T obj){
+	i++;
+	return obj;
+	}
+   
+
+}

@@ -1,0 +1,39 @@
+public class StarPlus
+{
+	public static void main(String[] args) 
+	{
+		int i,j,k,t;
+		for (i=0;i<9 ;i++ ){ //输出上半部分，i控制行数
+			for (j=0;j<2*i+1 ;j++ ) //j控制每一行的*数。这个数与i有关。
+			{
+				System.out.print("*");
+			}
+			for (k=0;k<33-4*i ;k++ )
+			{
+				System.out.print(" ");
+			}
+			//System.out.print(k);
+			for (t=0;t<2*i+1 ;t++ )
+			{
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+		for (i=0;i<8 ;i++ ){ //输出下半部分，i控制行数
+			for (j=0;j<15-2*i ;j++ ) //j控制每一行的*数。这个数与i有关。
+			{
+				System.out.print("*");
+			}
+			for (k=0;k<5+4*i ;k++ )
+			{
+				System.out.print(" ");
+			}
+			//System.out.print(k);
+			for (t=0;t<15-2*i ;t++ )
+			{
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+	}
+}

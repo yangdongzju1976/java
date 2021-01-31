@@ -1,0 +1,2 @@
+1.异常是程序中的一些错误，但并不是所有的错误都是异常，并且错误有时候是可以避免的。
+ java.lang.Error	 java.lang.Exception

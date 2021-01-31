@@ -1,0 +1,73 @@
+import javax.swing.*;//JPanel
+import java.awt.*;//颜色，图形、画笔 Graphics
+/*import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;*/
+import java.util.Random;
+public class GamePanel extends JPanel{
+
+	@Override 
+		//paintComponent()是swing的一个方法，相当于图形版的main()，是会自执行的。
+	    //如果一个class中有构造函数，则执行顺序是先执行构造函数，再执行这个。
+		protected void paintComponent(Graphics g){//Graphics g 画笔。repaint()调用此方法.protected 对于子类及本包可见
+			/*
+			java绘图时，最常使用到的就是paint(Graphics g)｛...内容...｝方法获取画笔，
+			然后利用JPanel等容器作为画布,在JFrame内呈现出内容，很多情况下这种方式都还是很实用，
+			
+			*/
+			//设置画笔
+			super.paintComponent(g);//调用父类的方法
+			
+			//给当前面板设置背景色
+			this.setBackground(new Color(179,231,240));//RGB三元色的值.画矩形后覆盖
+			
+			//画游戏面板，默认黑色。也可以通过setColor设置颜色。
+			//g.setColor(new Color(255,0,0)); //202,236,238
+			
+			 //是用预定的颜色填充一个矩形，得到一个着色的矩形块。填充颜色。
+			//g.fillRect(0,0,800,800);
+			
+			//画矩形框，只有线条，没有填充。
+			//g.drawRect(10,10,770,760);
+			
+
+			//重新设置颜色
+			g.setColor(Color.red);
+			//画线条
+
+			//g.drawLine(0,50,800,50); //g.drawLine(起点横坐标，起点纵坐标，终点横坐标，终点纵坐标）
+			
+			//设置线的粗细
+			/*Graphics2D g2 = (Graphics2D)g;  //g是Graphics对象
+			
+			g2.setColor(Color.red);
+			g2.setStroke(new BasicStroke(3));
+			g2.drawLine(0,80, 800, 80);
+			*/
+			//从细到粗画线
+			/*
+			for (int i=1,j=5,t=10;i<200 ;i*=2 )
+			{		
+				g2.setStroke(new BasicStroke(i));
+				g2.drawLine(0,j, 800,j);
+				j=j+t;
+				t=t+20;
+
+			}
+			*/
+			
+
+			//绘制40条横线（起点横坐标，起点纵坐标，终点横坐标，终点纵坐标）
+			for (int i=3;i<=32 ;i++ )
+				g.drawLine(25,25*i,775,25*i);
+			//绘制40条竖线
+			for (int i=1; i<=31;i++ )
+				g.drawLine(25*i,75,25*i,750);
+			
+			//填充
+			//g.fillRect(100,100,100,100);
+			g.fillRect(100,100,25,25);
+}
+}
+	

@@ -1,0 +1,81 @@
+package src;
+import java.awt.image.BufferedImage;
+import java.util.*; 
+import src.Tools;
+//import java.util.Arrays;
+public class Bird 
+{
+	//鸟的图片
+	BufferedImage img;
+	//鸟的坐标
+	int x,y;
+	//鸟的宽高
+	int w,h;
+	//用来装一组图片的容器
+	List <BufferedImage> list;
+	//初速度
+	double v0;
+	//时间间隔(往上的时间)
+	double t;
+	//距离
+	double s;
+	//重力
+	double g;
+
+
+	public Bird(){
+		//获取鸟的图片
+		img=Tools.getImg("../img/0.png");
+		//鸟的初始坐标
+		x=100;
+		y=200;
+		//获取鸟的宽高
+		w=img.getWidth()/2;
+		h=img.getHeight()/2;
+		//初始化装图片的容器
+		list = new ArrayList<BufferedImage>();
+		//向容器中添加图片
+		list.add(Tools.getImg("img/0.png"));
+		for (int i=0;i<8 ;i++ )
+		{
+			list.add(Tools.getImg("img/"+i+".png"));
+		}
+		//初始化初速度
+		v0=5;
+		//时间(到达最高点所需要的时间)
+		t=0.2;
+		//距离
+		s =0;
+		//重力
+		g=2;
+
+	}
+
+	//鸟的翅膀动起来
+	int index =0;//标记下标来获取图片
+	public void fly(){
+		//list.size()获取list中的元素总数量
+		img = list.get(index%list.size());
+		index++;
+		/*if (index==7)
+		{
+			index=0;
+		}*/
+
+	}
+	//小鸟的一个落体运动
+	public void move(){
+		//计算小鸟的上抛的距离
+		s=v0*t;
+		//得到小鸟上抛后的最高点的y坐标。
+		y=y-(int)s;//y是整型，s是double.强制类型转换
+		//计算小鸟到达最高点的速度（下落时的初速度）
+		double v2=v0-g*t;
+		v0=v2;
+	}
+	//小鸟上抛运动
+	public void moveUp(){
+		v0=10;
+	}
+	
+}

@@ -1,0 +1,65 @@
+//package helloasd;
+import java.util.*;
+public class hellojava {
+        public static void main(String[] args) {
+			Random r=new Random();
+            Scanner input = new Scanner(System.in);
+            System.out.print("输入名称: ");
+            //用户自己输入名字
+            String username = input.next();
+            String comname = "阿杰";
+            System.out.println(username +"  100分\t"+ "vs\t" + comname+"  100分\t");
+            //初始化双方数据
+            int hp1 = 100, hp2 = 100;       //双方的HP  
+            int attack1 = 0, attack2 = 0;
+             
+            //使用循环模拟对战过程
+            while(hp1 > 0 && hp2 > 0) {
+                attack1 = (int)(r.nextInt(1000)) % 11 + 5; //双方随机的攻击力（10~15）
+                attack2 = (int)(r.nextInt(1000)) % 11 + 5; 
+               System.out.println("attack1:"+attack1+"\tattck2:"+attack2);
+                //玩家先攻击
+                hp2 -= attack1; //玩家攻击，电脑掉血
+				
+                System.out.println(comname + ": " + hp2);
+                if(attack1 > 0 && attack1 <=5) {
+                    System.out.println("阿杰被命中攻击！");
+                }
+                else if(attack1 > 5 && attack1 <=10) {
+                    System.out.println("阿杰被重重的攻击！");
+                }
+                else {
+                    System.out.println("阿杰被致命一击！");
+                }
+                     
+                //显示电脑血量
+                 
+                hp1 -= attack2; //电脑攻击，玩家掉血
+                System.out.println(username + ": " + hp1);
+                //显示玩家血量
+                if(attack1 > 0 && attack1 <=5) {
+                    System.out.println(username + "被" + comname + "侥幸攻击了一下！");
+                }
+                else if(attack1 > 5 && attack1 <=10) {
+                    System.out.println(username + "遇到了强烈进攻！");
+                }
+                else {
+                    System.out.println(username + "被沉重打击！");
+                }
+                 
+                System.out.println("\n");
+            }
+            //打印结果
+            System.out.println("\n");
+            System.out.println("KO!");
+            System.out.println("玩家姓名\t血量");
+            System.out.println(username + "\t" + hp1);
+            System.out.println(comname + "\t" + hp2);
+            if(hp1 < 0) {
+                System.out.println("阿杰获胜！");
+            }
+            else {
+                System.out.println(username + "获胜！");
+            }
+    }
+}
